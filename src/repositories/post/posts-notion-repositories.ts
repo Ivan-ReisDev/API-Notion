@@ -158,8 +158,9 @@ export class PostNotionRepositoryes implements IPostRepository {
     }
   }
 
-  public async update(id: string, postData: Post): Promise<Post | null> {
+  public async updateById(id: string, postData: Post): Promise<Post | null> {
     try {
+        console.log(id)
       const imageProperty = postData.image
         ? {
             files: [
@@ -172,7 +173,7 @@ export class PostNotionRepositoryes implements IPostRepository {
         : {};
   
       const response = await notion.pages.update({
-        page_id: id,  
+        page_id: postData.id as string,  
         properties:{
             Company: {
             title: [

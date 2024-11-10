@@ -1,4 +1,4 @@
-export interface UpdatePostDTO {
+export interface PostUpdateDTO {
     company?: string;
     campaign?: string;
     description?: string;
